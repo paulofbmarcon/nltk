@@ -1106,7 +1106,7 @@ def train_maxent_classifier_with_iis(train_toks, trace=3, encoding=None,
 
     # Construct an encoding from the training data.
     if encoding is None:
-        encoding = BinaryMaxentFeatureEncoding.train(train_toks, labels=labels)
+        encoding = BinaryMaxentFeatureEncoding.train(train_toks, labels=labels, count_cuttoff=count_cuttoff)
 
     # Count how many times each feature occurs in the training data.
     empirical_ffreq = (calculate_empirical_fcount(train_toks, encoding) /
